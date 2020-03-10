@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.6.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
 gem 'gloomhaven'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 4.1'
