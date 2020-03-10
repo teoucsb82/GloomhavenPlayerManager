@@ -1,0 +1,5 @@
+h1 new player
+= form_for @player do |f|
+  = f.text_area :name, placeholder: 'name'
+  = f.select :character_class, Gloomhaven::CHARACTERS.keys
+  = f.submit

@@ -1,0 +1,6 @@
+h1 players
+
+- @players.each do |player|
+  = link_to player.name, player_path(player)
+
+= link_to 'Create player', new_player_path

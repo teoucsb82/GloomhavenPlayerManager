@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_021322) do
+ActiveRecord::Schema.define(version: 2020_03_10_023948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "players", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "xp", default: 0
-    t.integer "gold", default: 0
-    t.integer "check_marks", default: 0
-    t.text "notes"
-    t.string "type"
+    t.integer "user_id"
+    t.string "name"
+    t.string "character_class"
+    t.integer "gold"
+    t.integer "xp"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
