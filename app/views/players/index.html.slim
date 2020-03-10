@@ -1,6 +1,20 @@
 h1 players
 
-- @players.each do |player|
-  = link_to player.name, player_path(player)
+table.table
+  thead
+    tr
+      th Name
+      th Class
+      th Gold
+      th XP
+      th Actions
+  tbody
+  - @players.each do |player|
+    tr
+      td = link_to player.name, player_path(player)
+      td = player.character_class
+      td = player.gold
+      td = player.xp
+      td = link_to 'delete', player_path(player), method: :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'Create player', new_player_path
