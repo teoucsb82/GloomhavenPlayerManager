@@ -15,6 +15,7 @@ table.table
       td = player.character_class
       td = player.gold
       td = player.xp
+      td = link_to 'edit', edit_player_path(player)
       td = link_to 'delete', player_path(player), method: :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'Create player', new_player_path

@@ -2,4 +2,15 @@ h1 player show
 
 p = @player.inspect
 
+#deck 
+  = @deck.inspect
+
+br
+
+= link_to 'Bless', '#'
+|   
+= link_to 'Curse', '#'
+|   
+= link_to 'Shuffle', '#'
+
 = link_to 'Players', players_path

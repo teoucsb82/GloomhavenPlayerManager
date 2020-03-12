@@ -11,6 +11,7 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @deck = @player.deck
   end
 
   # GET /players/new
@@ -42,6 +43,7 @@ class PlayersController < ApplicationController
   # PATCH/PUT /players/1.json
   def update
     respond_to do |format|
+      binding.pry
       if @player.update(player_params)
         format.html { redirect_to @player, notice: 'Player was successfully updated.' }
         format.json { render :show, status: :ok, location: @player }
@@ -70,6 +72,6 @@ class PlayersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit(:name, :character_class, :gold, :xp)
+      params.require(:player).permit(:name, :character_class, :gold, :xp, { :perks => [] })
     end
 end

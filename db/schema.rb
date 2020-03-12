@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 2020_03_10_023948) do
 
   create_table "players", force: :cascade do |t|
     t.integer "user_id"
-    t.string "name"
-    t.string "character_class"
-    t.integer "gold"
-    t.integer "xp"
+    t.string "name", null: false
+    t.string "character_class", null: false
+    t.integer "gold", default: 0
+    t.integer "xp", default: 0
+    t.integer "check_marks", default: 0
+    t.json "perks", default: []
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

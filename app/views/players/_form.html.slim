@@ -1,0 +1,20 @@
+= form_for @player do |f|
+  = f.label :name, 'Name'
+  = f.text_field :name, placeholder: 'name'
+  br
+  = f.label :character_class, 'Class'
+  = f.select :character_class, Gloomhaven::CHARACTERS.keys
+  br
+  = f.label :gold
+  = f.number_field :gold, value: 0
+  br
+  = f.label :xp
+  = f.number_field :xp, value: 0
+  br
+  - if @player.persisted?
+    - Gloomhaven::CHARACTERS[@player.character_class]['perks'].keys.each do |key|
+      p 
+        = f.check_box :perks, { id: key, multiple: true }, key, @player.perks.include?(key)
+        = f.label key
+
+  = f.submit
