@@ -5,7 +5,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'gloomhaven'
 gem 'jbuilder', '~> 2.7'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'sass-rails', '>= 6'
 gem 'slim'
